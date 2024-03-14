@@ -75,9 +75,13 @@ export default function Account() {
               <LogoutButton />
             </li>
           </ul>
-          <div className="w-full sm:w-3/4 p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-            {openIndex === 1 && <Orders  />}
-            {openIndex === 2 && <ContactDetailsForm />}
+          <div className="sm:w-3/4 p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
+            <div className={openIndex === 1 ? 'block' : 'hidden'}>
+              <Orders />
+            </div>
+            <div className={openIndex === 2 ? 'block' : 'hidden'}>
+              <ContactDetailsForm />
+            </div>
           </div>
         </div>
       </div>

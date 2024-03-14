@@ -12,14 +12,21 @@ async function SingleProduct({ params: { slug } }) {
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10">
           {product ? (
             <>
-              <Image
-                className="rounded-lg"
-                src={product.attributes.banner.data.attributes.url}
-                width={400}
-                height={400}
-                alt="banner"
-              />
-              <div>
+              {product.attributes.banner.data.attributes.url ? (
+                <div className="w-full sm:w-1/3">
+                  <Image
+                    className="rounded-lg"
+                    src={product.attributes.banner.data.attributes.url}
+                    width={400}
+                    height={400}
+                    alt="banner"
+                  />
+                </div>
+              ) : (
+                <div className="h=[400px] w-[400px] bg-slate-200 animate-pulse"></div>
+              )}
+
+              <div className="w-full sm:w-2/3">
                 <h1 className="text-[24px] sm:text-[24px] font-bold">
                   {product.attributes.title}
                 </h1>
@@ -32,7 +39,7 @@ async function SingleProduct({ params: { slug } }) {
                 <h2 className="text-[20px] sm:text-[24px] font-semibold mt-5 text-primary">
                   $ {product.attributes.price}
                 </h2>
-                <AddToCartButton product={product}/>
+                <AddToCartButton product={product} />
               </div>
             </>
           ) : (
