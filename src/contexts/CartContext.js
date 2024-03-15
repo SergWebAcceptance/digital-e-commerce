@@ -14,8 +14,8 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
     const savedTotalAmount = JSON.parse(localStorage.getItem('totalAmount')) || 0;
-    setCart(savedCart);
-    setTotalAmount(savedTotalAmount);
+    //setCart(savedCart);
+    //setTotalAmount(savedTotalAmount);
   }, []);
 
   useEffect(() => {
