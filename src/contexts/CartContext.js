@@ -8,20 +8,25 @@ export function useCart() {
 }
 
 export const CartProvider = ({ children }) => {
+  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const initialTotal = JSON.parse(localStorage.getItem('totalAmount')) || 0;
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const savedTotalAmount = JSON.parse(localStorage.getItem('totalAmount')) || 0;
-    //setCart(savedCart);
-    //setTotalAmount(savedTotalAmount);
+    
+    console.log('Loaded cart from localStorage', initialCart);
+    setCart(initialCart);
+    setTotalAmount(initialTotal);
   }, []);
+  
 
   useEffect(() => {
+    console.log('Saving cart to localStorage', cart);
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem('totalAmount', JSON.stringify(totalAmount));
   }, [cart, totalAmount]);
+  
 
   const addToCart = (product) => {
     setCart(prev => {
