@@ -15,15 +15,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <AuthProvider>
-        <CartProvider>
-          <body className={inter.className}>
+      <body className={inter.className}>
+        <AuthProvider>
+          <CartProvider>
             <Header />
             <main>{children}</main>
             <Footer />
-          </body>
-        </CartProvider>
-      </AuthProvider>
+          </CartProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
