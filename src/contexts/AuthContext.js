@@ -8,7 +8,8 @@ export function useAuth() {
 }
 
 
-
+const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY;
+const apiUrl = process.env.NEXT_PUBLIC_REST_API_URL;
 
 
 export const AuthProvider = ({ children }) => {
@@ -23,7 +24,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
-      fetch(`http://localhost:1337/api/users/me`, {
+      fetch(`${apiUrl}users/me`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
