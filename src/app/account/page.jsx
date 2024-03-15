@@ -39,7 +39,7 @@ export default function Account() {
         </p>
 
         <div className="md:flex mt-6">
-          <ul className="flex-column w-full sm:w-1/4 space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+          <ul className="flex-column w-full sm:w-1/4 space-y space-y-4 text-sm font-medium text-gray-500 md:me-4 mb-4 md:mb-0">
             <li>
               <a
                 href="#"
@@ -75,7 +75,7 @@ export default function Account() {
               <LogoutButton />
             </li>
           </ul>
-          <div className="sm:w-3/4 p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
+          <div className="sm:w-3/4 p-6 bg-gray-50 text-medium text-gray-500 rounded-lg w-full">
             <div className={openIndex === 1 ? 'block' : 'hidden'}>
               <Orders />
             </div>
