@@ -14,11 +14,9 @@ async function SingleProduct({ params: { slug } }) {
             <>
               {product.attributes.banner.data.attributes.url ? (
                 <div className="w-full sm:w-1/3">
-                  <Image
+                  <img
                     className="rounded-lg"
                     src={product.attributes.banner.data.attributes.url}
-                    width={400}
-                    height={400}
                     alt="banner"
                   />
                 </div>
