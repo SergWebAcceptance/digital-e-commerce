@@ -22,7 +22,7 @@ function Header() {
             </div>
 
             <div className="flex items-center gap-4">
-              <Link href={"/cart"} className="flex items-center gap-1">
+              <Link href={"/cart"} className="flex items-center gap-1 text-black">
                 <ShoppingCart /> ({cartQuantity})
               </Link>
               {!currentUser ? (

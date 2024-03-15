@@ -74,7 +74,7 @@ function Cart() {
                       </div>
 
                       <div className="flex flex-1 items-center justify-end gap-3">
-                        <div className="text-sm font-medium">${product.attributes.price}</div>
+                        <div className="text-sm font-medium text-gray-900">${product.attributes.price}</div>
                         <button
                           className="text-gray-600 transition hover:text-red-600"
                           onClick={() => handleDeleteFromCart(product.id)}

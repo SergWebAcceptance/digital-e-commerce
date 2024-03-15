@@ -25,7 +25,7 @@ async function SingleProduct({ params: { slug } }) {
               )}
 
               <div className="w-full sm:w-2/3">
-                <h1 className="text-[24px] sm:text-[24px] font-bold">
+                <h1 className="text-[24px] sm:text-[24px] font-bold text-black">
                   {product.attributes.title}
                 </h1>
                 <h2 className="text-[14px] sm:text-[16px] font-bold mt-2 text-gray-400">

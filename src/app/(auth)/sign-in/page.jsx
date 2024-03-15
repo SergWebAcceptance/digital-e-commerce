@@ -55,7 +55,7 @@ export default function Login() {
           onSubmit={formik.handleSubmit}
           className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
         >
-          <p className="text-center text-lg font-medium">
+          <p className="text-center text-lg font-medium text-black">
             Sign in to your account
           </p>
 
@@ -66,7 +66,7 @@ export default function Login() {
 
             <div className="relative">
               <input
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm text-gray-900"
                 type="email"
                 id="email"
                 name="email"
@@ -104,7 +104,7 @@ export default function Login() {
 
             <div className="relative">
               <input
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm text-gray-900"
                 type="password"
                 id="password"
                 name="password"

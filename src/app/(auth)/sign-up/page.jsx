@@ -96,8 +96,9 @@ export default function SignUp() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="Email"
                 required
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm text-gray-900"
               />
 
               <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -130,8 +131,9 @@ export default function SignUp() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
+                placeholder="Password"
                 required
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm text-gray-900"
               />
 
               <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
