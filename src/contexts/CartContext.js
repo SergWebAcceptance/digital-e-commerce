@@ -8,25 +8,23 @@ export function useCart() {
 }
 
 export const CartProvider = ({ children }) => {
-  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
-  const initialTotal = JSON.parse(localStorage.getItem('totalAmount')) || 0;
-  const [cart, setCart] = useState([]);
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [cart, setCart] = useState(() => {
+    // Читання з localStorage відбувається тільки один раз тут
+    const initialCart = typeof window !== "undefined" ? JSON.parse(localStorage.getItem('cart')) || [] : [];
+    return initialCart;
+  });
+  const [totalAmount, setTotalAmount] = useState(() => {
+    // Читання з localStorage відбувається тільки один раз тут
+    const initialTotal = typeof window !== "undefined" ? JSON.parse(localStorage.getItem('totalAmount')) || 0 : 0;
+    return initialTotal;
+  });
 
   useEffect(() => {
-    
-    console.log('Loaded cart from localStorage', initialCart);
-    setCart(initialCart);
-    setTotalAmount(initialTotal);
-  }, []);
-  
-
-  useEffect(() => {
-    console.log('Saving cart to localStorage', cart);
+    // Цей useEffect тепер відповідає тільки за збереження змін у localStorage
+    console.log('Saving cart to localStorage', cart, totalAmount);
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem('totalAmount', JSON.stringify(totalAmount));
   }, [cart, totalAmount]);
-  
 
   const addToCart = (product) => {
     setCart(prev => {

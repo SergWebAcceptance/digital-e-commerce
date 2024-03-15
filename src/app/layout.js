@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { CartProvider } from "../contexts/CartContext";
 import { AuthProvider } from "../contexts/AuthContext";
+import Preloader from "../components/Preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <AuthProvider>
         <CartProvider>
           <body className={inter.className}>
+            <Preloader/>
             <Header />
             <main>{children}</main>
             <Footer />
